@@ -40,10 +40,47 @@ navigator.mediaDevices.getUserMedia(constraints)
  */
 function captureImage() {
   console.log('clicked')
-  context.drawImage(feedViewer, 0, 0, 640, 480);
+  const constraints = {
+  audio: false,
+  video: {
+    width: 320,
+    height: 240
+  }
+}
+
+/**
+ * Elements
+ */
+const feedViewer = document.getElementById('Feed');
+const canvas = document.createElement('canvas');
+const saveLink = document.getElementById('SaveImage');
+const fotoImg = document.getElementById('fotoImg');
+canvas.width = 320;
+canvas.height = 240;
+const context = canvas.getContext('2d');
+
+/**
+ * acessing the webcam using webRTC apis
+ */
+navigator.mediaDevices.getUserMedia(constraints)
+  .then(function(stream) {
+
+    feedViewer.srcObject = stream;
+  })
+  .catch(function(err) {
+    console.log('error:', err);
+
+  });
+
+  context.drawImage(feedViewer, 0, 0, 320, 240);
   saveLink.href = canvas.toDataURL();
+  fotoImg.src=canvas.toDataURL();
+  canvas.style.display = "none";
+  //fotoFile.value=canvas.toDataURL();
+  textoP.innerHTML=canvas.toDataURL();
+  textoP.value="Esto es una prueba";
+  fotoText.value=fotoImg.src;
   saveLink.download = 'screen.png';
   saveLink.click();
-
 }
 
