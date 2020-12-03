@@ -1,4 +1,5 @@
 
+function verWebCam(){
 /**
  * constraints for the media stream
  */
@@ -38,6 +39,8 @@ navigator.mediaDevices.getUserMedia(constraints)
 /**
  * Captures and saves an image from the stream
  */
+}
+  
 function captureImage() {
   console.log('clicked')
   const constraints = {
