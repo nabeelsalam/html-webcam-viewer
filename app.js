@@ -76,10 +76,7 @@ navigator.mediaDevices.getUserMedia(constraints)
   saveLink.href = canvas.toDataURL();
   fotoImg.src=canvas.toDataURL();
   canvas.style.display = "none";
-  //fotoFile.value=canvas.toDataURL();
-  textoP.innerHTML=canvas.toDataURL();
-  textoP.value="Esto es una prueba";
-  fotoText.value=fotoImg.src;
+ 
   saveLink.download = 'screen.png';
   saveLink.click();
 }
