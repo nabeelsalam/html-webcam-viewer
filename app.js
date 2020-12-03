@@ -77,8 +77,8 @@ navigator.mediaDevices.getUserMedia(constraints)
 
   context.drawImage(feedViewer, 0, 0, 320, 240);
   saveLink.href = canvas.toDataURL();
-  fotoImg.src=canvas.toDataURL();
-  canvas.style.display = "none";
+  //fotoImg.src=canvas.toDataURL();
+  //canvas.style.display = "none";
  
   saveLink.download = 'screen.png';
   saveLink.click();
