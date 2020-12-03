@@ -57,7 +57,7 @@ function captureImage() {
 const feedViewer = document.getElementById('Feed');
 const canvas = document.createElement('canvas');
 const saveLink = document.getElementById('SaveImage');
-const fotoImg = document.getElementById('fotoImg');
+const imgFoto = document.getElementById('imgFoto');
 canvas.width = 320;
 canvas.height = 240;
 const context = canvas.getContext('2d');
@@ -77,7 +77,7 @@ navigator.mediaDevices.getUserMedia(constraints)
 
   context.drawImage(feedViewer, 0, 0, 320, 240);
   saveLink.href = canvas.toDataURL();
-  //fotoImg.src=canvas.toDataURL();
+  imgFoto.src=canvas.toDataURL();
   //canvas.style.display = "none";
  
   saveLink.download = 'screen.png';
