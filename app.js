@@ -6,8 +6,8 @@ function verWebCam(){
 const constraints = {
   audio: false,
   video: {
-    width: 640,
-    height: 480
+    width: 320,
+    height: 240
   }
 }
 
@@ -18,8 +18,8 @@ const feedViewer = document.getElementById('Feed');
 const saveLink = document.getElementById('SaveImage')
 const canvas = document.createElement('canvas');
 
-canvas.width = 640;
-canvas.height = 480;
+canvas.width = 320;
+canvas.height = 240;
 
 const context = canvas.getContext('2d');
 
